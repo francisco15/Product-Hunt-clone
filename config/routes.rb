@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :users, only: [:new, :create]
   
   resources :products do
+    resource :vote, only: [:create, :destroy]
     resources :comments, only: [:create]
   end
   # get '/products', to: 'products#index'
@@ -17,5 +18,4 @@ Rails.application.routes.draw do
   # get '/products/:id/edit', to: 'products#edit', as: 'edit_product'
   # patch '/products/:id', to: 'products#update'
   # delete '/products/:id', to: 'products#destroy'
-  
 end
